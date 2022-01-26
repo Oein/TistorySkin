@@ -1,0 +1,334 @@
+<html>
+    <head>
+        <title>[##_page_title_##]</title>
+        <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+
+        <style>
+            a {
+                color: var(--color-text);
+                font-weight: bold;
+                font-size: 1.3em;
+            }
+
+            .lightText {
+                color: #B4B4B4;
+            }
+
+            .paddingLR {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .marginLR {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            .marginL {
+                margin-left: 5%;
+            }
+
+            .marginLNP {
+                margin-left: 15px;
+            }
+
+            .paddingB {
+                padding-bottom: 20%;
+            }
+
+            .w90 {
+                box-sizing: border-box;
+                width: 90%;
+            }
+
+            .onHome,
+            .onText,
+			.onSearch,
+			.onCategory {
+                display: none;
+            }
+
+            .w100 {
+                box-sizing: border-box;
+                width: 100%;
+            }
+
+            .multiLineX {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: box;
+                margin-top: 1px;
+                max-height: 80px;
+                overflow: hidden;
+                vertical-align: top;
+                text-overflow: ellipsis;
+                word-break: break-all;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+            }
+
+            .smallerText {
+                font-size: 0.7em;
+            }
+
+            .smallText {
+                font-size: 0.83em;
+            }
+
+            .NoUnderLine {
+                text-decoration: none !important;
+                -webkit-box-shadow: none !important;
+                box-shadow: none !important;
+            }
+
+            .hoverBig {
+                transition: all ease .3s;
+                width: 1.1em;
+                height: 1.1em;
+            }
+
+            .hoverBig:hover {
+                transform: scale(1.5);
+                color: var(--color-link);
+            }
+
+            .NoColor {
+                border: none;
+                border-radius: 0px;
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            form {
+                border: none;
+                border-radius: 0px;
+                box-shadow: none;
+                display: block;
+                max-width: none;
+                min-width: none;
+                padding: 1.5rem;
+                text-align: var(--justify-normal);
+            }
+
+            .header {
+                position: static;
+                margin-top: 32px;
+            }
+
+            .topBar {
+                position: fixed;
+                padding-top: 32px;
+                margin-top: 32px;
+                top: -32px;
+                opacity: 0.9;
+            }
+
+            .container_postbtn {
+                display: none;
+            }
+
+            .hft {
+                margin-bottom: 10000px;
+            }
+
+			.mv.no-more-prev,
+			.mv.no-more-next {
+				opacity: 0.5;
+			}
+
+            #tt-body-page .onText {
+                display: block;
+            }
+
+            #tt-body-page .onTextBeSmall {
+                transform: scale(0.9);
+                opacity: 0.7;
+            }
+
+            #tt-body-index .onHome {
+                display: block;
+            }
+
+			#tt-body-search .onSearch {
+				display: block;
+			}
+
+			#tt-body-category .onCategory {
+				display: block;
+			}
+        </style>
+    </head>
+    <body id='[##_body_id_##]'>
+        <s_t3></s_t3>
+        <!--Blog Top-->
+
+        <header class="topBar" style="right: 20em;">
+            <div class="search topBar">
+                <s_search>
+                    <input type="text" style="float:left;" name="[##_search_name_##]" value="[##_search_text_##]"
+                        onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }" />
+                    <input value="검색" style="float:right;" type="button" onclick="[##_search_onclick_submit_##]"
+                        class="submit" />
+                </s_search>
+            </div>
+        </header>
+
+        <header class="onTextBeSmall header">
+            <h1><a href="[##_blog_link_##]">[##_title_##]</a></h1>
+            <center style="padding-right: 3%;" align="right" class="lightText">by [##_blogger_##]</center>
+        </header>
+
+        <!--Blog Text-->
+        <s_permalink_article_rep>
+            <s_article_rep>
+                <!-- Start -->
+                <hr style="width:90%;" class="onText marginLR">
+
+				<s_article_protected>
+					<div class="entryProtected">
+						<div class="TextHeader paddingLR onText">
+							<center>
+								<h1><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h1>
+								<h5 class="lightText">on [##_article_rep_date_##]&nbsp;&nbsp;:&nbsp;&nbsp;<a class="lightText"
+										href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a></h5>
+							</center>
+						</div>
+						<center>
+							<p>보호되어 있는 글입니다. 내용을 보시려면 비밀번호를 입력하세요.</p>
+							<p>
+								<table>
+									<tr>
+										<td>
+											<input type="password" placeholder="비밀번호 ( Password )" id="[##_article_password_##]" name="[##_article_password_##]" value="" onkeydown="if (event.keyCode == 13)[##_article_dissolve_##]" />
+										</td>
+										<td>
+											<input type="button" class="submit" value="입력" onclick="[##_article_dissolve_##]" />
+										</td>
+									</tr>
+								</table>
+							</p>
+						</center>
+					</div>
+				  </s_article_protected>
+
+				
+                <div class="TextHeader paddingLR onText">
+                    <center>
+                        <h1><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h1>
+                        <h5 class="lightText">on [##_article_rep_date_##]&nbsp;&nbsp;:&nbsp;&nbsp;<a class="lightText"
+                                href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a></h5>
+                    </center>
+                </div>
+                <!-- Body -->
+                <div class="textBody paddingLR onText">
+                    [##_article_rep_desc_##]
+                </div>
+                <hr style="width:90%;" class="onText marginLR">
+                <!-- Comment -->
+                <s_rp>
+                    <div class="marginLR onText">
+                        <h3>Comments</h3>
+                        <!-- Comment Input -->
+                        <s_rp_input_form>
+                            <!-- reply_write -->
+                            <form method="post">
+                                <div class="area-write">
+                                    <s_rp_member>
+                                        <s_rp_guest>
+                                            <div class="box-account">
+                                                <input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]"
+                                                    title="이름" placeholder="이름" />
+                                                <input type="password" name="[##_rp_input_password_##]"
+                                                    value="[##_rp_admin_check_##]" title="비밀번호" maxlength="12"
+                                                    placeholder="비밀번호" />
+                                            </div>
+                                        </s_rp_guest>
+                                    </s_rp_member>
+                                    <div class="box-textarea">
+                                        <textarea id="[##_rp_input_comment_##]" name="[##_rp_input_comment_##]"
+                                            placeholder="내용을 입력해주세요."></textarea>
+                                    </div>
+
+                                    <div class="box-write">
+                                        <label class="xe-label">
+                                            <input type="checkbox" name="[##_rp_input_is_secret_##]" id="secret">
+                                            <span class="xe-input-helper"></span>
+                                            <span class="xe-label-text">비밀글</span>
+                                        </label>
+                                        <button type="button" class="btn_register"
+                                            onclick="[##_rp_onclick_submit_##]">등록</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                            <!-- // reply_write -->
+                        </s_rp_input_form>
+
+                        <!-- Comments -->
+                        <s_rp_container>
+                            <s_rp_rep>
+                                <p>
+                                    <div class="profile_image">
+                                        <img style="width: 40px; height: 40px; vertical-align:middle;"
+                                            src="[##_rp_rep_logo_##]" alt="">
+                                        <strong>[##_rp_rep_name_##]</strong>&nbsp;&nbsp;<time>[##_rp_rep_date_##]</time>
+                                    </div>
+                                </p>
+                                <p>
+                                    [##_rp_rep_desc_##]
+                                </p>
+                                <hr style="width:90%; height: 1px;margin:0px;" class="onText marginLR">
+                            </s_rp_rep>
+                        </s_rp_container>
+                    </div>
+                </s_rp>
+                <!-- End -->
+            </s_article_rep>
+        </s_permalink_article_rep>
+
+        <!--Blog Main-->
+        <div class="onHome">
+            <hr style="width:90%;" class="marginLR">
+
+            <div class=""> </div>
+        </div>
+
+		<div class="onSearch">
+			<hr style="width:90%;" class="marginLR">
+		</div>
+
+		<s_list>
+			<s_list_rep>
+				<div class="[##_list_style_##] marginLR w90 onHome onSearch">
+					<p>
+						<a href="[##_list_rep_link_##]">
+							<p class="">[##_list_rep_title_##]</p>
+							<p class="smallerText">
+								<h6 class="marginLNP w100 lightText multiLineX smallerText">
+									[##_list_rep_summary_##]
+								</h6>
+							</p>
+						</a>
+					</p>
+				</div>
+			</s_list_rep>
+		</s_list>
+
+		<s_paging>
+			<center>
+				<div class="paging onHome onSearch">
+					<h3>
+						<a [##_prev_page_##] class="[##_no_more_prev_##] hoverBig NoUnderLine mp">◀ </a>
+						<span class="numbox">
+							<s_paging_rep>
+								<a [##_paging_rep_link_##] style="margin: 5px;" class="smallText NoUnderLine hoverBig">[##_paging_rep_link_num_##]</a>
+							</s_paging_rep>
+						</span>
+						<a [##_next_page_##] class="[##_no_more_next_##] hoverBig NoUnderLine mp"> ▶</a>
+						<h3>
+				</div>
+			</center>
+		</s_paging>
+    </body>
+</html>
